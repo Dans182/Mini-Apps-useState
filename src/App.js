@@ -1,11 +1,13 @@
 import React from "react";
-import CounterApp from "./counterApp";
+import ConditionalApp from "./conditionalApp";
+//import CounterApp from "./counterApp";
 
 
 function App() {
   return (
     <div>
-      <CounterApp/>
+      {/* <CounterApp/> */}
+      <ConditionalApp/>
     </div>
   );
 }
