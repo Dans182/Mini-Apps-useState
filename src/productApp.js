@@ -19,12 +19,19 @@ const ProductApp = () => {
     });
   };
 
-
   return (
     <div>
-      <button onClick={() => updateProduct ("title", "Nuevo título")}>Update</button>
+      <button onClick={() => updateProduct("title", "Nuevo título")}>
+        Update
+      </button>
       <h1>{product.title}</h1>
       <h1>{product.description}</h1>
+
+      {/* <div>{product}</div> Esto no sirve porque en JSX no podemos imprimir objetos.  */}
+      {/* Entonces, para poder imprimir objetos, o sea, JSON, tenemos que hacer como con los boolean, pasarlo a string */}
+      {/* En este caso, JSON.stringify */}
+
+      <pre>{JSON.stringify(product, null, 2)}</pre>
     </div>
   );
 };
