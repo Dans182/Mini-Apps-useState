@@ -1,5 +1,6 @@
 import React from "react";
-import ConditionalApp from "./conditionalApp";
+import ErrorApp from "./errorApp"
+//import ConditionalApp from "./conditionalApp";
 //import CounterApp from "./counterApp";
 
 
@@ -7,7 +8,8 @@ function App() {
   return (
     <div>
       {/* <CounterApp/> */}
-      <ConditionalApp/>
+      {/* <ConditionalApp/> */}
+      <ErrorApp/>
     </div>
   );
 }
