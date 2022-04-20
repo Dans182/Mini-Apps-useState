@@ -10,7 +10,9 @@ const ShoppingCart = () => {
   const [cart, setCart] = useState (initialCart);
 
   return (
-    <div>ShoppingCart</div>
+    <div>
+      ShoppingCart
+    </div>
   )
 }
 
