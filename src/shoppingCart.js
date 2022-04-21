@@ -15,8 +15,17 @@ const ShoppingCart = () => {
 
   const addProduct = (newProduct) => {
     newProduct.id = Date.now();
-
     const changedCart = [newProduct, ...cart];
+    setCart(changedCart);
+  };
+
+  const updateProduct = (editProduct) => {
+
+    const changedCart = cart.map(product => (
+      product.id === editProduct.id
+      ? editProduct
+      : product
+    ));
     setCart(changedCart);
   };
 
@@ -32,6 +41,19 @@ const ShoppingCart = () => {
       >
         Add
       </button>
+
+      <button
+        onClick={() =>
+          updateProduct({
+            id: 1,
+            title: "New product",
+            description: "New description",
+          })
+        }
+      >
+        Update
+      </button>
+
 
       {cart.map((product) => (
         <div key={product.id}>
