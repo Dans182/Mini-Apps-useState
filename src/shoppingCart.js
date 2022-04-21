@@ -42,17 +42,7 @@ const ShoppingCart = () => {
         Add
       </button>
 
-      <button
-        onClick={() =>
-          updateProduct({
-            id: 1,
-            title: "New product",
-            description: "New description",
-          })
-        }
-      >
-        Update
-      </button>
+
 
 
       {cart.map((product) => (
@@ -61,6 +51,17 @@ const ShoppingCart = () => {
           <h1>{product.title}</h1>
           <p>{product.description}</p>
           <button onClick={() => deleteProduct(product.id)}>Eliminar</button>
+          <button
+        onClick={() =>
+          updateProduct({
+            id: product.id,
+            title: "Edited product",
+            description: "Edited description",
+          })
+        }
+      >
+        Update
+      </button>
         </div>
       ))}
     </div>
