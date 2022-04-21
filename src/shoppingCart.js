@@ -8,8 +8,15 @@ const initialCart = [
 const ShoppingCart = () => {
   const [cart, setCart] = useState(initialCart);
 
+  const deleteProduct = (productId) => {
+    const changedCart = cart.filter((product) => product.id !== productId);
+    setCart(changedCart);
+  };
+
   return (
     <div>
+      <button onClick={() => deleteProduct(1)}>Eliminar</button>
+
       {cart.map((product) => (
         <div key={product.id}>
           <h1>{product.title}</h1>
