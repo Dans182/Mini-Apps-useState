@@ -13,14 +13,32 @@ const ShoppingCart = () => {
     setCart(changedCart);
   };
 
+  const addProduct = (newProduct) => {
+    newProduct.id = Date.now();
+
+    const changedCart = [newProduct, ...cart];
+    setCart(changedCart);
+  };
+
   return (
     <div>
-      <button onClick={() => deleteProduct(1)}>Eliminar</button>
+      <button
+        onClick={() =>
+          addProduct({
+            title: "New product",
+            description: "New description",
+          })
+        }
+      >
+        Add
+      </button>
 
       {cart.map((product) => (
         <div key={product.id}>
+          <h1>{product.id}</h1>
           <h1>{product.title}</h1>
           <p>{product.description}</p>
+          <button onClick={() => deleteProduct(product.id)}>Eliminar</button>
         </div>
       ))}
     </div>
